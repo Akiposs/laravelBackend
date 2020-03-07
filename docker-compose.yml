@@ -1,0 +1,60 @@
+version: "3"
+services:
+  nginx:
+    build:
+      context: .
+      dockerfile: ./nginx/Dockerfile
+    volumes:
+      # アクセスログ・エラーログを外部に保存する
+      - ./logs/nginx:/var/log/nginx
+      # 設定ファイルを外部に保存する
+      - ./nginx/conf.d:/etc/nginx/conf.d
+      # Laravelプロジェクトと繋ぐ
+      - ./laravel:/var/www/laravel
+    ports:
+      - 180:80
+    networks:
+      - akipon_app_network
+    depends_on:
+      # PHPの後に処理を実行しはじめる
+      - phpfpm
+    tty: true
+
+  phpfpm:
+    build:
+      context: .
+      dockerfile: ./php/Dockerfile
+    volumes:
+      - ./laravel:/var/www/laravel
+    networks:
+      - akipon_app_network
+    depends_on:
+      - mysql
+    env_file:
+      ./php/env/setting.env
+    tty: true
+    ports:
+      - 19000:9000
+
+  mysql:
+    build:
+      context: .
+      dockerfile: ./mysql/Dockerfile
+    volumes: 
+      - ./mysql/data:/var/lib/mysql
+      - ./mysql/mysql_conf:/etc/mysql/conf.d
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      TZ: 'Asia/Tokyo'
+    env_file:
+      ./mysql/env/setting.env
+    ports:
+      - 13306:3306
+    networks:
+      - akipon_app_network
+    tty: true
+    ports:
+      - 13306:3306
+
+networks:
+  akipon_app_network:

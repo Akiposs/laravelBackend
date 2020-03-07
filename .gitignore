@@ -1,0 +1,4 @@
+logs/*
+mysql/data/*
+mysql/env/*
+*DS_Store
