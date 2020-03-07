@@ -10,7 +10,7 @@ services:
       # 設定ファイルを外部に保存する
       - ./nginx/conf.d:/etc/nginx/conf.d
       # Laravelプロジェクトと繋ぐ
-      - ./laravel:/var/www/laravel
+      - ./laravel_portfolio:/var/www/laravel_portfolio
     ports:
       - 180:80
     networks:
@@ -23,15 +23,17 @@ services:
   phpfpm:
     build:
       context: .
-      dockerfile: ./php/Dockerfile
+      dockerfile: ./phpfpm/Dockerfile
     volumes:
-      - ./laravel:/var/www/laravel
+      - ./laravel_portfolio:/var/www/laravel_portfolio
+      # - ./phpfpm/etc:/usr/local/etc
+      # - ./logs/phpfpm:/usr/local/var/log
     networks:
       - akipon_app_network
     depends_on:
       - mysql
     env_file:
-      ./php/env/setting.env
+      ./phpfpm/env/setting.env
     tty: true
     ports:
       - 19000:9000
