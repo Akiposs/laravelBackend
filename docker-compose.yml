@@ -26,8 +26,6 @@ services:
       dockerfile: ./phpfpm/Dockerfile
     volumes:
       - ./laravel_portfolio:/var/www/laravel_portfolio
-      # - ./phpfpm/etc:/usr/local/etc
-      # - ./logs/phpfpm:/usr/local/var/log
     networks:
       - akipon_app_network
     depends_on:
