@@ -11,6 +11,7 @@ RUN apk --no-cache update && \
   apk --no-cache add \
   sudo \
   vim \
-  composer
+  composer &&\
+  adduser -D nginx
 
 CMD [ "/bin/sh" ]
