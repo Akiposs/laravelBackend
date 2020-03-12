@@ -11,6 +11,12 @@ RUN apk --no-cache update && \
   apk --no-cache add \
   sudo \
   vim \
-  composer
+  composer &&\
+  adduser -D nginx
+
+WORKDIR /var/wwww/laravel_portfolio
+RUN chomod 777 ーR storage && \
+  cp .env.example .env && \
+  php artisan key:generate
 
 CMD [ "/bin/sh" ]
