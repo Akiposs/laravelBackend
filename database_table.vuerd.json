@@ -1,0 +1,370 @@
+{
+  "canvas": {
+    "width": 2000,
+    "height": 2000,
+    "scrollTop": 1,
+    "scrollLeft": 0,
+    "show": {
+      "tableComment": true,
+      "columnComment": true,
+      "columnDataType": true,
+      "columnDefault": true,
+      "columnAutoIncrement": true,
+      "columnPrimaryKey": true,
+      "columnUnique": true,
+      "columnNotNull": true,
+      "relationship": true
+    },
+    "database": "MySQL",
+    "databaseName": "",
+    "canvasType": "ERD",
+    "language": "graphql",
+    "tableCase": "pascalCase",
+    "columnCase": "camelCase"
+  },
+  "table": {
+    "tables": [
+      {
+        "name": "users",
+        "comment": "一般ユーザー",
+        "columns": [
+          {
+            "name": "id",
+            "comment": "主キー",
+            "dataType": "INT",
+            "default": "",
+            "id": "7974e3b4-0f4f-485d-bd2c-85c3a8ebd32f",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": true,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": true,
+              "fk": false,
+              "pfk": false,
+              "widthName": 60,
+              "widthComment": 60,
+              "widthDataType": 60,
+              "widthDefault": 60
+            }
+          },
+          {
+            "name": "name",
+            "comment": "名前",
+            "dataType": "STRING",
+            "default": "",
+            "id": "e85ca406-f60f-4e45-b7aa-a2b6753c30e9",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 60,
+              "widthComment": 60,
+              "widthDataType": 60,
+              "widthDefault": 60
+            }
+          },
+          {
+            "name": "eamil",
+            "comment": "メールアドレス",
+            "dataType": "STRING",
+            "default": "",
+            "id": "298b9776-61eb-4ec9-acd4-2361f8f52136",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 60,
+              "widthComment": 93,
+              "widthDataType": 60,
+              "widthDefault": 60
+            }
+          },
+          {
+            "name": "password",
+            "comment": "パスワード",
+            "dataType": "STRING",
+            "default": "",
+            "id": "87211b60-33be-4077-9c3e-0f570c72d7d7",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 60,
+              "widthComment": 67,
+              "widthDataType": 60,
+              "widthDefault": 60
+            }
+          }
+        ],
+        "id": "52864583-4b36-4687-8510-a99fa21d5faf",
+        "ui": {
+          "active": false,
+          "top": 89.5,
+          "left": 55,
+          "widthName": 60,
+          "widthComment": 80,
+          "zIndex": 172
+        }
+      },
+      {
+        "name": "schedules",
+        "comment": "スケジュール",
+        "columns": [
+          {
+            "name": "id",
+            "comment": "主キー",
+            "dataType": "INT",
+            "default": "",
+            "id": "19fdd0f2-a3d6-483b-8d3b-342f989c84e8",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": true,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": true,
+              "fk": false,
+              "pfk": false,
+              "widthName": 60,
+              "widthComment": 60,
+              "widthDataType": 60,
+              "widthDefault": 60
+            }
+          },
+          {
+            "name": "user_id",
+            "comment": "外部キー",
+            "dataType": "INT",
+            "default": "",
+            "id": "ce7e919d-650e-4b1d-ade6-0518d43413fa",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": true,
+              "pfk": false,
+              "widthName": 60,
+              "widthComment": 60,
+              "widthDataType": 60,
+              "widthDefault": 60
+            }
+          },
+          {
+            "name": "schedule_name",
+            "comment": "予定名",
+            "dataType": "STRING",
+            "default": "",
+            "id": "393421a3-cbbd-4b1e-b5e0-d1e226a08fdc",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 82,
+              "widthComment": 60,
+              "widthDataType": 60,
+              "widthDefault": 60
+            }
+          },
+          {
+            "name": "schedule_detail",
+            "comment": "予定詳細",
+            "dataType": "STRING",
+            "default": "",
+            "id": "b6fce4c0-d7e0-47e9-ab4e-883b2c01bf91",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": false
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 83,
+              "widthComment": 60,
+              "widthDataType": 60,
+              "widthDefault": 60
+            }
+          },
+          {
+            "name": "start_time",
+            "comment": "開始時刻",
+            "dataType": "DATETIME",
+            "default": "",
+            "id": "7cca641f-59da-4fa8-933c-9b2e1c0ee471",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 60,
+              "widthComment": 60,
+              "widthDataType": 67,
+              "widthDefault": 60
+            }
+          },
+          {
+            "name": "end_time",
+            "comment": "終了時刻",
+            "dataType": "DATETIME",
+            "default": "",
+            "id": "ad60ce3f-f568-4efe-896d-ad0f10039917",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 60,
+              "widthComment": 60,
+              "widthDataType": 67,
+              "widthDefault": 60
+            }
+          },
+          {
+            "name": "remind_at",
+            "comment": "リマインド予定時刻",
+            "dataType": "DATETIME",
+            "default": "",
+            "id": "d039515f-cde5-43ec-a614-885f13e5f019",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": false
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 60,
+              "widthComment": 119,
+              "widthDataType": 67,
+              "widthDefault": 60
+            }
+          },
+          {
+            "name": "reminded_at",
+            "comment": "リマインド実施時刻",
+            "dataType": "DATETIME",
+            "default": "",
+            "id": "9a68a91e-ccda-4a57-b2d1-6e6462c482a0",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": false
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 67,
+              "widthComment": 119,
+              "widthDataType": 67,
+              "widthDefault": 60
+            }
+          }
+        ],
+        "id": "dace75c6-4d08-40d3-88ea-f00647575542",
+        "ui": {
+          "active": false,
+          "top": 391,
+          "left": 29.5,
+          "widthName": 60,
+          "widthComment": 80,
+          "zIndex": 192
+        }
+      }
+    ],
+    "tableFocus": null,
+    "edit": null,
+    "copyColumns": [],
+    "columnDraggable": null
+  },
+  "memo": {
+    "memos": []
+  },
+  "relationship": {
+    "relationships": [
+      {
+        "identification": false,
+        "id": "8dcd3bdc-968d-4287-be46-298719070642",
+        "relationshipType": "ZeroOneN",
+        "start": {
+          "tableId": "52864583-4b36-4687-8510-a99fa21d5faf",
+          "columnIds": [
+            "7974e3b4-0f4f-485d-bd2c-85c3a8ebd32f"
+          ],
+          "x": 243.5,
+          "y": 246.5,
+          "direction": "bottom"
+        },
+        "end": {
+          "tableId": "dace75c6-4d08-40d3-88ea-f00647575542",
+          "columnIds": [
+            "ce7e919d-650e-4b1d-ade6-0518d43413fa"
+          ],
+          "x": 246,
+          "y": 391,
+          "direction": "top"
+        }
+      }
+    ],
+    "draw": null
+  }
+}
