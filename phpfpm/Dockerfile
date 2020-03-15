@@ -3,7 +3,7 @@ FROM php:7.4.3-fpm-alpine3.11
 # COPYはCOPY先が/付き出ないとエラー起きる
 # またボリュームはホスト側のディレクトリ構造で上書きしてしまうので、コンテナ生成時に出来たものをそのまま
 # 使いたい場合は、一部を予め用意し、COPYで渡してあげるのがベターなのではないか
-COPY ./phpfpm/initialize/php.ini /etc/php7/
+# COPY ./phpfpm/initialize/php.ini /etc/php7/
 COPY ./phpfpm/initialize/php-fpm.conf /usr/local/etc/
 COPY ./phpfpm/initialize/www.conf /usr/local/etc/php-fpm.d/
 
@@ -12,11 +12,10 @@ RUN apk --no-cache update && \
   sudo \
   vim \
   composer &&\
-  adduser -D nginx
-
-WORKDIR /var/wwww/laravel_portfolio
-RUN chomod 777 ーR storage && \
-  cp .env.example .env && \
-  php artisan key:generate
+  adduser -D nginx && \
+  docker-php-ext-install pdo_mysql
 
 CMD [ "/bin/sh" ]
+
+# 新規環境構築時は、.envの手渡し、「 chmod 777 -R /var/wwww/laravel_portfolio/storage」コマンド要実行
+# [php -m | grep pdo] でmysql_pdoがインストールされているか確認すること
