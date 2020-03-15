@@ -30,8 +30,6 @@ services:
       - akipon_app_network
     depends_on:
       - mysql
-    env_file:
-      ./phpfpm/env/setting.env
     tty: true
 
   mysql:
@@ -39,13 +37,14 @@ services:
       context: .
       dockerfile: ./mysql/Dockerfile
     volumes: 
-      - ./mysql/data:/var/lib/mysql
-      - ./mysql/mysql_conf:/etc/mysql/conf.d
+      - ./logs/mysql:/var/log/mysql
+      # - ./mysql/mysql.conf.d:/etc/mysql/mysql.conf.d
+      # - ./mysql/initdb.d:/docker-entrypoint-initdb.d
     environment:
-      MYSQL_ROOT_PASSWORD: root
       TZ: 'Asia/Tokyo'
-    env_file:
-      ./mysql/env/setting.env
+      MYSQL_ROOT_PASSWORD: root
+    ports:
+      - 58720:3306
     networks:
       - akipon_app_network
     tty: true
