@@ -16,12 +16,13 @@ class CreateSchedulesTable extends Migration
         Schema::create('schedules', function (Blueprint $table) {
             $table->id();
             $table->foreignId('user_id');
-            $table->string('schedule_name');
-            $table->string('schedule_detail');
+            $table->string('name');
+            $table->string('detail')->nullable();
+            $table->integer('category');
             $table->dateTime('start_time');
             $table->dateTime('end_time');
-            $table->dateTime('remind_at');
-            $table->dateTime('reminded_at');
+            $table->dateTime('remind_at')->nullable();
+            $table->dateTime('reminded_at')->nullable();
             $table->timestamps();
         });
     }
