@@ -1,5 +1,5 @@
 
-- App名 : CCB(Central Coocking Blog)
+ App名 : CCB(Central Coocking Blog)
 - 概要：料理ブログ集客プラットフォーム
 - 目的：
  - 自身のブログへのアクセス数を増やす(ターゲット：ブログ主)
