@@ -2,4 +2,3 @@ logs/*
 mysql/data/*
 mysql/env/*
 *DS_Store
-laravel_portfolio/storage/*
