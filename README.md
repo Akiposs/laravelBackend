@@ -57,5 +57,11 @@
 ----------------------------------------------------------
 
 ### 必要テーブル
-  - users
-  - schedules
+#### users
+#### articles
+#### article_access_log
+#### articles_atmosfier
+#### articles_ganle
+#### fovalite_user
+#### favorite_article
+  
