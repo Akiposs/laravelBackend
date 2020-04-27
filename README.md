@@ -1,6 +1,6 @@
 ## App名 : CCB(Central Coocking Blog)
 ### 概要：
-料理ブログ集客プラットフォーム
+### 料理ブログ集客プラットフォーム
 
 ----------------------------------------------------------
 
@@ -95,3 +95,32 @@
 #### favorite_article
 - user_id
 - article_id
+
+
+
+### URL一覧
+#### vue側
+- /user/dashboard             | GET | (要認証) | ダッシュボード画面(ユーザーログアウトボタン含む)
+- /user/register/input        | GET | () | ユーザー情報登録画面
+- /user/register/confirm      | GET | () | ユーザー情報登録内容確認画面
+- /user/register/complete     | GET | () | ユーザー情報登録完了通知画面
+- /user/login                 | GET | () | ユーザーログイン画面
+- /user/profile/edit          | GET | (要認証) | ユーザープロフィール画面(対自分：編集機能付き)
+- /user/profile/show          | GET | () | ユーザープロフィール画面(対一般ユーザー)
+- /recipe/index               | GET | () | 料理レシピ・動画一覧画面(検索結果一覧画面)
+- /recipe/detail              | GET | (要認証) | 料理レシピ・動画詳細画面
+- /recipe/post/input          | GET | (要認証) | 料理レシピ・動画投稿画面
+- /recipe/post/confirm        | GET | (要認証) | 料理レシピ・動画投稿内容確認画面
+- /recipe/post/complete       | GET | (要認証) | 料理レシピ・動画投稿完了通知画面
+
+#### laravel側
+- /api/register               |POST|()|会員登録処理　
+- /api/logout                 |POST|()|ログイン処理　
+- /api/logout                 |POST|(要認証)|ログアウト処理
+- /api/user                   |GET|()| ユーザー情報取得処理　
+- /api/user/post              |POST|()| ユーザー情報保存処理
+- /api/recipe/index           |GET|()| レシピ情報取得処理
+- /api/recipe/detail          |GET|()| レシピ詳細情報取得処理
+- /api/recipe/post            |POST|()| レシピ情報新規登録処理
+- /api/recipe/delete          |DELETE|()| レシピ情報削除処理　
+
