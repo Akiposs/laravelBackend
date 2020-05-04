@@ -62,6 +62,7 @@
 - name
 - email
 - password
+- email_verified_at
 - created_at
 - updated_at
 #### articles
@@ -89,10 +90,10 @@
 #### articles_ganles
 - id
 - ganle
-#### fovalite_user
+#### fovalite_users
 - sended_user_id
 - received_user_id
-#### favorite_article
+#### favorite_articles
 - user_id
 - article_id
 

@@ -1,5 +1,3 @@
--- CREATE DATABASE schedule_manage_db;
--- CREATE USER 'schedule_mng_user'@'%' IDENTIFIED BY 'shcedule_mtg_pass';
--- GRANT ALL ON *.* TO 'schedule_mng_user'@'%';
-
-
+CREATE DATABASE laravel_backend_db;
+CREATE USER 'laravel_backend_user'@'%' IDENTIFIED BY 'tmp1234';
+GRANT ALL PRIVILEGES ON laravel_backend_db.* TO 'laravel_backend_user'@'%';

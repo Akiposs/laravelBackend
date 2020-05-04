@@ -20,3 +20,5 @@ CMD [ "/bin/sh" ]
 # 新規環境構築時は、.envの手渡し、「 chmod 777 -R storage」コマンド要実行
 # [php -m | grep pdo] でmysql_pdoがインストールされているか確認すること
 # [composer install]コマンドが初期は必要
+
+# laravelの.envファイルでDB_HOSTは「mysql」で名前解決できる
