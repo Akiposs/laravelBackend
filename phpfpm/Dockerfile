@@ -1,4 +1,4 @@
-FROM php:7.4.3-fpm-alpine3.11
+FROM php:8.2.0RC2-fpm-alpine3.16
 
 # COPYはCOPY先が/付き出ないとエラー起きる
 # またボリュームはホスト側のディレクトリ構造で上書きしてしまうので、コンテナ生成時に出来たものをそのまま
@@ -13,7 +13,12 @@ RUN apk --no-cache update && \
   vim \
   composer &&\
   adduser -D nginx && \
-  docker-php-ext-install pdo_mysql
+  docker-php-ext-install pdo_mysql && \
+  php-xml && \
+  php-dom && \
+  php-xmlwriter && \
+  php-fileinfo && \
+  php-tokenizer
 
 CMD [ "/bin/sh" ]
 
