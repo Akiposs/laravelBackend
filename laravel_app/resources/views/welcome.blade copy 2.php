@@ -18,16 +18,6 @@
     <div id="app">
         <span>@{{ message }}</span>
         <br>
-        <span v-bind:title="title">あああ</span>
-        <br>
-        <span v-if="ex">困ったねー</span>
-        <ol>
-            <li v-for="test_data in test_array">@{{ test_data.text }}</li>
-        </ol>
-        <button v-on:click="toggleSpan">ボタン</button>
-        <div v-bind:title="text">
-            aaaaa
-        </div>
         <input type="text" v-model="text">
         <div>@{{ text }}</div>
         <test-component 
