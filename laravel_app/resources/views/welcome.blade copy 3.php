@@ -20,7 +20,7 @@
         <br>
         <span v-bind:title="title">あああ</span>
         <br>
-        <span v-if="ex">困ったねー</span>
+        <span v-if="ex">困ったねーaaaaaaaaaa</span>
         <ol>
             <li v-for="test_data in test_array">@{{ test_data.text }}</li>
         </ol>
